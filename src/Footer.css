@@ -9,8 +9,9 @@
 
 .Footer a {
   color: navy;
+  text-decoration: none;
 }
 
 .Footer a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
