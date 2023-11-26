@@ -1,0 +1,28 @@
+.Weather {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgb(30, 30, 30);
+  color: white;
+  padding: 20px 40px;
+  border-radius: 12px;
+  opacity: 0.85;
+}
+
+.Weather h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.Weather p {
+  font-size: 22px;
+  margin: 8px 0;
+}
+
+.Weather .flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Weather .text-right {
+  text-align: right;
+}
