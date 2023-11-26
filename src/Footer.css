@@ -1,0 +1,16 @@
+.Footer {
+  text-align: center;
+  opacity: 0.8;
+}
+
+.Footer p {
+  color: rgb(30, 30, 30);
+}
+
+.Footer a {
+  color: navy;
+}
+
+.Footer a:hover {
+  text-decoration: none;
+}
