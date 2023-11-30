@@ -4,7 +4,7 @@ import "./Weather.css";
 export default function weather() {
   return (
     <div className="Weather">
-      <form>
+      <form className="mb-1">
         <div className="row">
           <div className="col-sm-9">
             <input

@@ -8,10 +8,6 @@
   opacity: 0.85;
 }
 
-.Weather form {
-  margin-bottom: 10px;
-}
-
 .Weather form input.search,
 .Weather form input.search-btn {
   width: 100%;
