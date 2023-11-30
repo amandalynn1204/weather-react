@@ -10,17 +10,19 @@ export default function Weather(props) {
     setWeatherData({
       city: response.data.city,
       description: response.data.condition.description,
+      icon: response.data.condition.icon_url,
       temperature: Math.round(response.data.temperature.current),
       humidity: response.data.temperature.humidity,
       wind: Math.round(response.data.wind.speed),
     });
     setReady(true);
+    console.log(response.data);
   }
 
   if (ready === true) {
     return (
       <div className="Weather">
-        <form className="mb-1">
+        <form className="mb-3">
           <div className="row">
             <div className="col-sm-9">
               <input
@@ -37,11 +39,12 @@ export default function Weather(props) {
         <div className="row">
           <div className="col-sm-6 text-center text-sm-start">
             <h1>{weatherData.city}</h1>
-            <p>Sunday 3:00 a.m.</p>
+            <p className="pt-3">Sunday 3:00 a.m.</p>
             <p className="text-capitalize">{weatherData.description}</p>
           </div>
           <div className=" col-sm-6 text-center text-sm-end">
-            <h1>⛅ {weatherData.temperature}°F</h1>
+            <img src={weatherData.icon} className="weather-icon" />
+            <h1 className="d-inline-block "> {weatherData.temperature}°F</h1>
             <p>Humidity: {weatherData.humidity}%</p>
             <p>Wind: {weatherData.wind} mph</p>
           </div>

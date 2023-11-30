@@ -33,6 +33,11 @@
   margin: 0;
 }
 
+.Weather img.weather-icon {
+  position: relative;
+  bottom: 12px;
+}
+
 @media (max-width: 575px) {
   .Weather h1 {
     font-size: 38px;
