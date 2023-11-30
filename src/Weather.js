@@ -19,12 +19,12 @@ export default function weather() {
         </div>
       </form>
       <div className="row">
-        <div className="col-sm-6 ">
+        <div className="col-sm-6 text-center text-sm-start">
           <h1>Cleveland</h1>
           <p>Sunday 3:00 a.m.</p>
           <p>Clouds</p>
         </div>
-        <div className=" col-sm-6 text-end">
+        <div className=" col-sm-6 text-center text-sm-end">
           <h1>⛅ 73°F</h1>
           <p>Humidity: 52%</p>
           <p>Wind: 2 mph</p>
