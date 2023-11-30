@@ -11,18 +11,10 @@
 .Weather h1 {
   font-size: 48px;
   margin: 20px 0;
+  font-weight: 600;
 }
 
 .Weather p {
   font-size: 22px;
-  margin: 8px 0;
-}
-
-.Weather .flex {
-  display: flex;
-  justify-content: space-between;
-}
-
-.Weather .text-right {
-  text-align: right;
+  margin: 0;
 }
