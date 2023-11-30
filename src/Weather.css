@@ -8,6 +8,24 @@
   opacity: 0.85;
 }
 
+.Weather form {
+  margin-bottom: 10px;
+}
+
+.Weather form input.search,
+.Weather form input.search-btn {
+  width: 100%;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+.Weather form input.search-btn {
+  background-color: pink;
+  box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.4);
+}
+
 .Weather h1 {
   font-size: 48px;
   margin: 20px 0;
