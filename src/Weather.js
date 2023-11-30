@@ -43,7 +43,11 @@ export default function Weather(props) {
             <p className="text-capitalize">{weatherData.description}</p>
           </div>
           <div className=" col-sm-6 text-center text-sm-end">
-            <img src={weatherData.icon} className="weather-icon" />
+            <img
+              src={weatherData.icon}
+              alt={weatherData.description}
+              className="weather-icon"
+            />
             <h1 className="d-inline-block "> {weatherData.temperature}°F</h1>
             <p>Humidity: {weatherData.humidity}%</p>
             <p>Wind: {weatherData.wind} mph</p>
