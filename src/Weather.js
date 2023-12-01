@@ -9,6 +9,13 @@ export default function Weather(props) {
   const [city, setCity] = useState("");
 
   function handleResponse(response) {
+    if (ready && TypeError) {
+      alert(
+        `We can't find that city!! 😔 Try entering only the city, or searching "https://www.google.com/search?q=${city}+weather" on Google.`
+      );
+      return;
+    }
+
     setWeatherData({
       city: response.data.city,
       time: response.data.time * 1000,
@@ -34,7 +41,7 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  if (ready === true) {
+  if (ready) {
     return (
       <div className="Weather">
         <form className="mb-3" onSubmit={handleSubmit}>
