@@ -20,6 +20,11 @@
 .Weather form input.search-btn {
   background-color: pink;
   box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.4);
+  transition: all 200ms ease-in-out;
+}
+
+.Weather form input.search-btn:hover {
+  background-color: rgb(255, 151, 168);
 }
 
 .Weather h1 {
