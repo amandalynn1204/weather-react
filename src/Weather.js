@@ -9,7 +9,7 @@ export default function Weather(props) {
   const [city, setCity] = useState("");
 
   function handleResponse(response) {
-    if (ready && TypeError) {
+    if (response.data.city === undefined) {
       alert(
         `We can't find that city!! 😔 Try entering only the city, or searching "https://www.google.com/search?q=${city}+weather" on Google.`
       );
