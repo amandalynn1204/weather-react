@@ -6,6 +6,7 @@ import FormattedTime from "./FormattedTime";
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
   const [weatherData, setWeatherData] = useState({});
+  const [city, setCity] = useState("");
 
   function handleResponse(response) {
     setWeatherData({
@@ -17,19 +18,33 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       wind: Math.round(response.data.wind.speed),
     });
+
     setReady(true);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const apiKey = "9a7ca83bt1f54ebc3o8f9d804f5e2b0e";
+    let unit = "imperial";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (ready === true) {
     return (
       <div className="Weather">
-        <form className="mb-3">
+        <form className="mb-3" onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-sm-9">
               <input
                 type="search"
                 placeholder="Enter a city..."
                 className="search"
+                onChange={handleCityChange}
               />
             </div>
             <div className="col-sm-3">
