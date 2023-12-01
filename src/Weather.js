@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import FormattedTime from "./FormattedTime";
 
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
@@ -9,6 +10,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       city: response.data.city,
+      time: response.data.time * 1000,
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
       temperature: Math.round(response.data.temperature.current),
@@ -16,7 +18,6 @@ export default function Weather(props) {
       wind: Math.round(response.data.wind.speed),
     });
     setReady(true);
-    console.log(response.data);
   }
 
   if (ready === true) {
@@ -39,7 +40,9 @@ export default function Weather(props) {
         <div className="row">
           <div className="col-sm-6 text-center text-sm-start">
             <h1>{weatherData.city}</h1>
-            <p className="pt-3">Sunday 3:00 a.m.</p>
+            <p className="pt-3">
+              <FormattedTime time={weatherData.time} />
+            </p>
             <p className="text-capitalize">{weatherData.description}</p>
           </div>
           <div className=" col-sm-6 text-center text-sm-end">
