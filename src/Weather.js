@@ -3,6 +3,7 @@ import "./Weather.css";
 import axios from "axios";
 import WeatherTemperature from "./WeatherTemperature";
 import FormattedTime from "./FormattedTime";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
@@ -15,19 +16,19 @@ export default function Weather(props) {
         `We can't find that city!! 😔 Try entering only the city, or searching "https://www.google.com/search?q=${city}+weather" on Google.`
       );
       return;
+    } else {
+      setWeatherData({
+        city: response.data.city,
+        time: response.data.time * 1000,
+        description: response.data.condition.description,
+        icon: response.data.condition.icon_url,
+        temperature: Math.round(response.data.temperature.current),
+        humidity: response.data.temperature.humidity,
+        wind: Math.round(response.data.wind.speed),
+      });
+
+      setReady(true);
     }
-
-    setWeatherData({
-      city: response.data.city,
-      time: response.data.time * 1000,
-      description: response.data.condition.description,
-      icon: response.data.condition.icon_url,
-      temperature: Math.round(response.data.temperature.current),
-      humidity: response.data.temperature.humidity,
-      wind: Math.round(response.data.wind.speed),
-    });
-
-    setReady(true);
   }
 
   function handleCityChange(event) {
@@ -80,6 +81,7 @@ export default function Weather(props) {
             <p>Wind: {weatherData.wind} mph</p>{" "}
           </div>
         </div>
+        <WeatherForecast />
       </div>
     );
   } else {
