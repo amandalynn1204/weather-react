@@ -81,7 +81,7 @@ export default function Weather(props) {
             <p>Wind: {weatherData.wind} mph</p>{" "}
           </div>
         </div>
-        <WeatherForecast />
+        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {
