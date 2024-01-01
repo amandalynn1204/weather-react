@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import WeatherTemperature from "./WeatherTemperature";
 import FormattedTime from "./FormattedTime";
 import WeatherForecast from "./WeatherForecast";
 
@@ -76,7 +75,7 @@ export default function Weather(props) {
               alt={weatherData.description}
               className="weather-icon"
             />
-            <WeatherTemperature fahrenheit={weatherData.temperature} />
+            <h1 className="d-inline-block"> {weatherData.temperature}°F</h1>
             <p>Humidity: {weatherData.humidity}%</p>
             <p>Wind: {weatherData.wind} mph</p>{" "}
           </div>
