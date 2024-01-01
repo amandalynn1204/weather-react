@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import FormattedTime from "./FormattedTime";
-import WeatherForecast from "./WeatherForecast";
+import WeatherData from "./WeatherData";
 
 export default function Weather(props) {
   const [ready, setReady] = useState(false);
@@ -61,26 +60,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <div className="row">
-          <div className="col-sm-6 text-center text-sm-start">
-            <h1>{weatherData.city}</h1>
-            <p className="pt-3">
-              <FormattedTime time={weatherData.time} />
-            </p>
-            <p className="text-capitalize">{weatherData.description}</p>
-          </div>
-          <div className=" col-sm-6 text-center text-sm-end">
-            <img
-              src={weatherData.icon}
-              alt={weatherData.description}
-              className="weather-icon"
-            />
-            <h1 className="d-inline-block"> {weatherData.temperature}°F</h1>
-            <p>Humidity: {weatherData.humidity}%</p>
-            <p>Wind: {weatherData.wind} mph</p>{" "}
-          </div>
-        </div>
-        <WeatherForecast city={weatherData.city} />
+        <WeatherData data={weatherData} />
       </div>
     );
   } else {
