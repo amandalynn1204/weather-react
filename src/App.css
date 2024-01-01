@@ -1,8 +1,14 @@
 .App {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 100px 10px;
+  padding: 75px 10px;
   background-image: url(../images/clouds.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 575px) {
+  .App {
+    padding: 50px 10px;
+  }
 }

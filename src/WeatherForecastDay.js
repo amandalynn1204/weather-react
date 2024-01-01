@@ -6,7 +6,7 @@ export default function WeatherForecastDay(props) {
   let day = days[time.getDay()];
 
   return (
-    <div className="col">
+    <div className="WeatherForecastDay">
       <p>{day}</p>
       <img
         src={props.data.condition.icon_url}

@@ -1,6 +1,6 @@
 .WeatherForecast {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 40px;
 }
 
 .WeatherForecast p {
@@ -18,4 +18,13 @@
 .WeatherForecast-temperature-low {
   opacity: 0.6;
   margin-right: 5px;
+}
+
+@media (max-width: 575px) {
+  .WeatherForecast {
+    margin-top: 15px;
+  }
+  .WeatherForecast .WeatherForecastDay {
+    margin-top: 25px;
+  }
 }
